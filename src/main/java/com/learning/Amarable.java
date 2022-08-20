@@ -1,7 +1,7 @@
 package com.learning;
 
 public interface Amarable {
-    public int conbienDeCorde();
+    public int conbienDeCorde(int vitesseDuVent);
 
-    int conbienDeCorde(int vitesseDuVent);
+
 }
