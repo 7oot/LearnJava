@@ -2,7 +2,20 @@ package com.learning;
 
 public class MyJavaLearn {
     public static void main(String[] args) {
-        Voiture voitureDe7oot = new Voiture();
+
+        Bateau b = new Bateau();
+        b.masse=60;
+        Port p = new Port();
+        p.accueillirEngin(b);
+
+
+
+
+        /**UsineDAssemblageVoiture ua= new UsineDAssemblageVoiture();
+        VehiculeAMoteur.v =ua.assembler(); /*covariance*/
+
+
+        /**Voiture voitureDe7oot = new Voiture("jaune",5);
         voitureDe7oot.nbPortes = 5;
         voitureDe7oot.automatique = true;
         voitureDe7oot.couleur = "rouge";
@@ -21,7 +34,7 @@ public class MyJavaLearn {
         System.out.println("le nouveau rapport est:" + nvrapport);
 
         voitureDe7oot.tournerGD(false, 45);
-        Voiture voitureDeJerome = new Voiture();
+        Voiture voitureDeJerome = new Voiture ("rouge",4);
         voitureDeJerome.nbPortes = 3;
         voitureDeJerome.couleur = "bleu";
         voitureDeJerome.automatique = true;
@@ -49,13 +62,18 @@ public class MyJavaLearn {
         System.out.println("la voiture de 7oot à " + voitureDe7oot.nbroues);
         System.out.println("la voiture de 7oot à " + Voiture.nbroues);
 
+        Voiture (){
+            super (new Moteur());
+        }
+        ((Voiture) voiturede7oot).automatique= true; /*transtypage*/
+
 
 
 
 
 
         /* projet planete */
-        Planete solarSystemPlanet = new Planete();
+        Planete solarSystemPlanet = new Planete("solarSystemPlanet");
 
         solarSystemPlanet.nom = "Jupiter";
         solarSystemPlanet.matiere = "gazeuses";
@@ -64,12 +82,12 @@ public class MyJavaLearn {
 
 
         /* Section x.y : nouveau exerice */
-        Planete neptune = new Planete();
+        Planete neptune = new Planete("neptune");
         neptune.nom = "Neptune";
         neptune.diametre = 49532;
         neptune.matiere = "Gazeuse";
 
-        Planete neuf = new Planete();
+        Planete neuf = new Planete("neuf");
 
 
         System.out.println(solarSystemPlanet.nom + " est une planète  " + solarSystemPlanet.matiere + " avec un diamètre de " + solarSystemPlanet.diametre + " kilomètres ");
@@ -80,9 +98,45 @@ public class MyJavaLearn {
 
         System.out.println("neptune a effectué " + neptune.revolution(-684) + " tours complets autour de son étoile.");
 
+        Planete.expansion(10.5);
+        Planete.expansion(14.2);
+        System.out.println("le nombre total de planete decouverte est de "+ Planete.nbPlanetesDecouvertes);
+
+        VaisseauDeGuerre chasseur = new VaisseauDeGuerre ();
+        chasseur.blindage=156;
+        chasseur.resistanceDuBouclier=2;
+        chasseur.type="Chasseur";
+
+        VaisseauCivil vaisseauMonde = new VaisseauCivil ();
+        vaisseauMonde.blindage=4784;
+        vaisseauMonde.resistanceDuBouclier=30;
+        vaisseauMonde.type="vaisseau Monde";
+
+        chasseur.activerBouclier();
+        vaisseauMonde.activerBouclier();
+
+        chasseur.attaque (vaisseauMonde,"lasers photoniques",3);
+        vaisseauMonde.desactiverBouclier();
+        System.out.println("la resistance du bouclier du " +vaisseauMonde.type+ " est de " +vaisseauMonde.resistanceDuBouclier );
+        System.out.println("le blindage du " +vaisseauMonde.type+ " est de "+ vaisseauMonde.blindage );
+
+
+
+
+
+
+
+    }
+
+    }
+
+
+
+
+
 /**
  System.out.println("Le nombre d'humains ayant déjà séjourné sur Mars est actuellement de "+solarSystemPlanet.accueillirVaisseau("FREGATE",8));
- **/
+
         Vaisseau nouveauVaisseau = new Vaisseau();
         nouveauVaisseau.NbsPassenger = 9;
         nouveauVaisseau.type = "FREGATE";
@@ -93,7 +147,7 @@ public class MyJavaLearn {
         neptune.accueillirVaisseau(secondVaisseau, secondVaisseau.NbsPassenger);
 
         System.out.println("La forme d'une planète est " + Planete.forme);
-        System.out.println("La forme de " + solarSystemPlanet.nom + " est " + solarSystemPlanet.forme);
+        System.out.println("La forme de " + solarSystemPlanet.nom + " est " + solarSystemPlanet.forme);/**
 
     }
 }

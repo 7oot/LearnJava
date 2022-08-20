@@ -1,24 +1,26 @@
 package com.learning;
 
-public class Voiture {
+public class Voiture extends VehiculeAMoteur implements Vidangeable{
 
     // Les attributs
-        int nbPortes=5;
-        String couleur;
+
         boolean automatique;
         int rapportCourant;
         int VitesseCourante;
         static int nbroues=4;
         Moteur moteur;
+        static String couleur= "Jaune";
+        static int nbPortes=5;
 
-        // Les méthodes
-        void klaxonner() {
+    public Voiture() {
+
+    }
+
+    // Les méthodes
+        static void klaxonner() {
             System.out.println("toutouuuuut");
         }
-       int accelerer () {
-            System.out.println("j accelere ");
-            return 100;
-        }
+
         int accelerer(int VitesseSup) {
             System.out.println("j accelere ");
             return VitesseCourante+VitesseSup;
@@ -54,6 +56,19 @@ public class Voiture {
 
             return villeDeSesReves;
         }
+        Voiture(String couleur, int nbPortes){
+            super();
+            this.couleur=couleur;
+            System.out.println("la couleur de la voiture est " +Voiture.couleur);
+            this.nbPortes=nbPortes;
+            System.out.println("le nombre de porte est égale à " + Voiture.nbPortes);
+
+        }
+
+    @Override
+    public void vidanger() {
+        System.out.println("Devisser le bouchon");
+    }
 }
 
 

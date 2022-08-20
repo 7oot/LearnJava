@@ -2,15 +2,20 @@ package com.learning;
 
 public class Planete {
 
-        String nom;
+        static String nom;
         long diametre;
         String matiere;
         int totalVisiteurs = 0;
+
         Vaisseau nouveauVaisseau;
         Vaisseau secondVaisseau = new Vaisseau();
 
         Atmosphere  atmosphere = new Atmosphere ();
     static String forme="Sphérique";
+
+    public static void expansion() {
+    }
+
     void revolution(){
         System.out.println("Je suis la planète " + nom + "et je tourne autour de mon étoile.");
     }
@@ -18,8 +23,6 @@ public class Planete {
         System.out.println("Je suis la planète " + nom + "et je tourne sur moi-même.");
 
     }
-
-
 
     int revolution (int angle){
 
@@ -31,6 +34,28 @@ public class Planete {
         return angle/360;
     }
 
+     static double expansion (double distance){
+        if (distance< 14) {
+            System.out.println("Oh la la mais c'est super rapide !");
+        }
+            else{
+                System.out.println("Je rêve ou c'est plus rapide que la lumière ?");
+
+            }
+        return distance;
+
+        }
+        static int nbPlanetesDecouvertes=0;
+        Planete(String nom){
+            this.nom = nom;
+            System.out.println("le nom de la planete est " + Planete.nom);
+
+            ++nbPlanetesDecouvertes;
+
+    }
+
+
+/***
         int accueillirVaisseau (Vaisseau vaisseau, int nbrHumains){
 
             if (nouveauVaisseau==null){
@@ -45,12 +70,12 @@ public class Planete {
 
 
             nbrHumains=nbrHumains+vaisseau.NbsPassenger;
-            return nbrHumains;
+            return nbrHumains;**/
 
 
 
     }
-}
+
 
 
         /***int accueillirVaisseau ( String typeVaisseau, int nbVisiteurs) {
